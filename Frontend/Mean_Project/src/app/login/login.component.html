@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works</title>
+    <!-- Link to the external stylesheet for the How It Works page -->
+    <link rel="stylesheet" href="login.component.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div class="login-page-container">
+  <!-- Login Card Container -->
+  <div class="login-card">
+
+    <!-- Logo and Heading -->
+    <div class="header-section">
+      <!-- Replace with your actual logo or an SVG icon -->
+      <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+      </svg>
+      <h2 class="main-heading">Welcome Back!</h2>
+      <p class="sub-heading">Log in to continue your journey.</p>
+    </div>
+
+    <!-- Login Form -->
+    <form class="login-form">
+      <!-- Email Input -->
+      <div class="input-group">
+        <label for="email" class="sr-only">Email address</label>
+        <div class="input-wrapper">
+          <div class="input-icon-left">
+            <!-- Email icon -->
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+            </svg>
+          </div>
+          <input id="email" name="email" type="email" autocomplete="email" required class="input-field" placeholder="Email address">
+        </div>
+      </div>
+
+      <!-- Password Input -->
+      <div class="input-group">
+        <label for="password" class="sr-only">Password</label>
+        <div class="input-wrapper">
+          <div class="input-icon-left">
+            <!-- Lock icon -->
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="input-field" placeholder="Password">
+          <!-- Optional: Password visibility toggle icon can be added here -->
+        </div>
+      </div>
+
+      <!-- Remember Me & Forgot Password -->
+      <div class="form-options">
+        <div class="checkbox-group">
+          <input id="remember-me" name="remember-me" type="checkbox" class="checkbox-input">
+          <label for="remember-me" class="checkbox-label">
+            Remember me
+          </label>
+        </div>
+
+        <div class="forgot-password">
+          <a href="#" class="link-text">
+            Forgot your password?
+          </a>
+        </div>
+      </div>
+
+      <!-- Login Button -->
+      <div>
+        <button type="submit" class="login-button">
+          Log In
+        </button>
+      </div>
+    </form>
+
+    <!-- Or Separator -->
+    <div class="separator">
+      <div class="line"></div>
+      <div class="text">Or continue with</div>
+      <div class="line"></div>
+    </div>
+
+    <!-- Social Login Buttons -->
+    <div class="social-login-buttons">
+      <div>
+        <button type="button" class="social-button">
+          <!-- Google icon -->
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M12.24 10.29v2.21h6.05c-.25 1.57-1.4 4.07-6.05 4.07-3.67 0-6.65-2.99-6.65-6.67s2.98-6.67 6.65-6.67c2.04 0 3.39.87 4.17 1.62l1.9-1.89c-1.12-1.04-2.5-1.92-6.07-1.92-4.94 0-8.97 4.03-8.97 8.97s4.03 8.97 8.97 8.97c5.17 0 8.52-3.73 8.52-8.77 0-.61-.06-1.19-.16-1.74h-8.36z"></path>
+          </svg>
+          Continue with Google
+        </button>
+      </div>
+      <div>
+        <button type="button" class="social-button">
+          <!-- Facebook icon -->
+          <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.65 9.12 8.43 9.87V15.4h-2.1v-2.8h2.1v-2.1c0-2.09 1.28-3.23 3.14-3.23 0.9 0 1.68 0.07 1.91 0.1v2.2h-1.3c-1.03 0-1.23 0.49-1.23 1.21v1.52h2.56l-0.42 2.8h-2.14v6.47C18.35 21.12 22 16.99 22 12z"></path>
+          </svg>
+          Continue with Facebook
+        </button>
+      </div>
+    </div>
+
+    <!-- Sign Up Link -->
+    <div class="signup-link">
+      Not a member?
+      <a href="#" class="link-text">
+        Create an account
+      </a>
+    </div>
+  </div>
+</div>
+

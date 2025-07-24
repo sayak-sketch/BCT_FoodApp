@@ -1,0 +1,30 @@
+/* Basic reset or global styles for positioning */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* You might want a global font-family here if not set in index.html's body */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7; /* Match the menu section's background */
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure app-root takes full viewport height */
+}
+
+main {
+    flex-grow: 1; /* Allows the main content area to expand and push footer down */
+    display: flex; /* Use flexbox to center the menu component */
+    justify-content: center;
+    align-items: center; /* Vertically center if content is shorter than viewport */
+    padding: 20px; /* Add some padding around the menu if desired */
+    box-sizing: border-box;
+}
+
+/* You can add specific styles for header/footer positioning if needed,
+   but typically their own CSS files handle their internal layout. */
+/* Example: If header/footer are fixed or have specific heights */
+/* header { height: 60px; } */
+/* footer { height: 50px; } */

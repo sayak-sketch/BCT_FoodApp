@@ -1,0 +1,279 @@
+/* Keyframe Animations for Homepage */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInFromBottom {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes priceFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes gradientBgShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* General Body Styling (assuming this is the main page body) */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee); /* Very light, subtle gradient */
+    background-size: 200% 200%;
+    animation: gradientBgShift 25s ease infinite alternate; /* Slow, continuous background animation */
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.menu-section {
+    padding: 4rem 2rem; /* Generous padding around the section */
+    max-width: 1200px; /* Max width for the content */
+    margin: 0 auto; /* Center the section */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    letter-spacing: -0.06em; /* Tighter for impact */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    animation: fadeInScale 1s ease-out forwards;
+    opacity: 0; /* Start hidden */
+}
+
+.section-description {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 3rem;
+    animation: fadeInScale 1s ease-out 0.3s forwards; /* Delayed fade-in */
+    opacity: 0; /* Start hidden */
+}
+
+.menu-categories {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    margin-bottom: 3.5rem; /* More space below categories */
+    animation: slideInFromBottom 1s ease-out 0.6s forwards; /* Animated entrance */
+    opacity: 0; /* Start hidden */
+}
+
+.category-button {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 2px solid #e0e0e0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 2rem; /* Pill shape */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+}
+
+.category-button:hover {
+    background-color: #e0e0e0;
+    border-color: #d0d0d0;
+    transform: translateY(-3px); /* Lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+}
+
+.category-button.active {
+    background: linear-gradient(45deg, #FF6347, #FF4500); /* Vibrant orange gradient */
+    color: #fff;
+    border-color: #FF4500;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.4); /* Matching shadow */
+    transform: translateY(-2px); /* Slight lift for active */
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 2.5rem; /* Space between cards */
+    justify-content: center;
+}
+
+.menu-card {
+    background-color: #ffffff;
+    border-radius: 1.5rem; /* Very rounded corners */
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15), 0 8px 15px -5px rgba(0, 0, 0, 0.08); /* Deep shadow */
+    overflow: hidden; /* Ensures image corners are rounded */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: slideInFromBottom 0.8s ease-out forwards; /* Initial slide-in for cards */
+    opacity: 0; /* Start hidden */
+    padding-bottom: 1.5rem; /* Padding for content below image */
+    position: relative; /* For price positioning */
+}
+
+/* Staggered animation for menu cards */
+.menu-card:nth-child(1) { animation-delay: 0.9s; }
+.menu-card:nth-child(2) { animation-delay: 1.1s; }
+.menu-card:nth-child(3) { animation-delay: 1.3s; }
+.menu-card:nth-child(4) { animation-delay: 1.5s; } /* Add more delays if you have more cards */
+
+
+.menu-card:hover {
+    transform: translateY(-15px) scale(1.03); /* More dramatic lift and scale on hover */
+    box-shadow: 0 25px 50px -15px rgba(0, 0, 0, 0.25), 0 12px 20px -8px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+}
+
+/* Background colors for cards */
+.orange-bg { background: linear-gradient(135deg, #ffe0b2, #ffcc80); } /* Light orange */
+.pink-bg { background: linear-gradient(135deg, #f8bbd0, #f48fb1); } /* Light pink */
+.green-bg { background: linear-gradient(135deg, #c8e6c9, #a5d6a7); } /* Light green */
+.blue-bg { background: linear-gradient(135deg, #bbdefb, #90caf9); } /* Light blue */
+
+
+.item-image {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    overflow: hidden; /* Ensures image stays within bounds */
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, crop if necessary */
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-card:hover .item-image img {
+    transform: scale(1.1); /* Zoom image on card hover */
+}
+
+.price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(45deg, #4CAF50, #2E8B57); /* Green gradient for price */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem; /* Pill shape */
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: priceFloat 2s ease-in-out infinite alternate; /* Floating price animation */
+}
+
+.item-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+
+.item-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 1rem; /* Padding for description text */
+    margin-bottom: 1rem;
+}
+
+.rating {
+    color: #FFD700; /* Gold color for stars */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: flex; /* Use flex to center icon and text */
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.rating .fas.fa-star {
+    font-size: 1.2rem; /* Slightly larger star icon */
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(45deg, #FF6347, #FF4500); /* Tomato to OrangeRed gradient */
+    color: #fff;
+    font-weight: 700;
+    padding: 0.9rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 15px rgba(255, 99, 71, 0.4);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 1.1rem;
+    width: calc(100% - 3rem); /* Full width minus padding */
+    margin: 0 1.5rem; /* Match card padding */
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(45deg, #FF4500, #FF6347); /* Invert gradient on hover */
+    transform: translateY(-4px); /* Lift more */
+    box-shadow: 0 10px 20px rgba(255, 99, 71, 0.6); /* Stronger shadow */
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #CD5C5C, #B22222); /* Darker red on active */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .section-description {
+        font-size: 1.1rem;
+    }
+    .menu-card {
+        max-width: 350px; /* Limit card width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-description {
+        font-size: 1rem;
+    }
+    .menu-categories {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center;
+    }
+    .category-button {
+        width: 80%; /* Make buttons wider */
+    }
+    .menu-card {
+        padding-bottom: 1rem;
+    }
+    .add-to-cart-btn {
+        width: calc(100% - 2rem); /* Adjust button width for smaller padding */
+        margin: 0 1rem;
+    }
+}

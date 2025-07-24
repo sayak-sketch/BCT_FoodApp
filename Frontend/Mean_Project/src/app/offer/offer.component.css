@@ -1,0 +1,234 @@
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Base Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f0e6, #e6f0f8); /* Softer, warmer gradient */
+    background-size: 200% 200%; /* For gradient animation */
+    animation: gradientShift 15s ease infinite; /* Apply gradient animation */
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 3rem;
+    }
+}
+
+.page-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-align: center;
+    color: #8B4513; /* SaddleBrown for a rich, inviting feel */
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    letter-spacing: -0.04em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* More pronounced text shadow */
+    animation: fadeIn 1s ease-out; /* Fade in animation for title */
+}
+
+@media (min-width: 640px) {
+    .page-title {
+        font-size: 3.5rem;
+        margin-bottom: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .page-title {
+        font-size: 4rem;
+    }
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    justify-items: center;
+}
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu-grid {
+        gap: 2.5rem;
+    }
+}
+
+.menu-card {
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.2), 0 6px 12px -4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.8s ease-out forwards; /* Slide in animation for cards */
+    opacity: 0; /* Start hidden for animation */
+}
+
+/* Staggered animation for cards */
+.menu-card:nth-child(1) { animation-delay: 0.2s; }
+.menu-card:nth-child(2) { animation-delay: 0.4s; }
+.menu-card:nth-child(3) { animation-delay: 0.6s; }
+.menu-card:nth-child(4) { animation-delay: 0.8s; }
+
+
+.menu-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.3), 0 10px 15px -5px rgba(0, 0, 0, 0.15);
+    background-color: #fffaf0;
+}
+
+.card-image {
+    width: 100%; /* Ensure image takes full width of its container */
+    height: 14rem;
+    object-fit: cover;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-card:hover .card-image {
+    transform: scale(1.05); /* Slightly more zoom on image hover */
+}
+
+.card-content {
+    padding: 1.75rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+}
+
+.card-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #4A4A4A;
+    margin-bottom: 1.25rem;
+}
+
+.card-footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #A0A0A0;
+    font-size: 1.05rem;
+    margin-right: 0.75rem;
+    font-weight: 500;
+}
+
+.combo-price {
+    font-size: 2rem;
+    color: #FF6347; /* Tomato red for a strong call to action/discount */
+    font-weight: 900;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite; /* Pulse animation for price */
+}
+
+@media (min-width: 640px) {
+    .combo-price {
+        font-size: 2.5rem;
+    }
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(45deg, #FF8C00, #FF4500); /* Orange to Red gradient */
+    color: #fff;
+    font-weight: 800;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.4);
+    transition: background 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(45deg, #FF4500, #FF8C00); /* Invert gradient on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.6);
+    border: 2px solid #fff;
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #CD5C5C, #B22222);
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 639px) {
+    .combo-card .card-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .combo-card .card-footer > div {
+        text-align: center;
+        width: 100%;
+    }
+}

@@ -1,0 +1,195 @@
+/* Custom font for a modern look */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #e6e9ee); /* Soft gradient background */
+    color: #333; /* Darker text for readability */
+    -webkit-font-smoothing: antialiased; /* For smoother text rendering */
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.container {
+    max-width: 1280px; /* Equivalent to Tailwind's max-w-screen-xl or similar */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem; /* p-6, slightly more padding by default */
+    width: 100%; /* Ensure container takes full width on small screens */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .container {
+        padding: 2rem; /* sm:p-8 */
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .container {
+        padding: 3rem; /* lg:p-12 */
+    }
+}
+
+.page-title {
+    font-size: 2.8rem; /* Larger title */
+    font-weight: 900; /* Extra bold */
+    text-align: center;
+    color: #2c3e50; /* Deeper, richer dark blue */
+    margin-bottom: 2.5rem; /* More space below title */
+    margin-top: 1.5rem; /* More space above title */
+    letter-spacing: -0.03em; /* Tighter letter spacing for impact */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .page-title {
+        font-size: 3.5rem; /* Even larger on small screens */
+        margin-bottom: 3.5rem; /* More space below title */
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .page-title {
+        font-size: 4rem; /* Largest on large screens */
+    }
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 1.75rem; /* Increased gap */
+    justify-items: center;
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+        gap: 2rem; /* md:gap-8 */
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .menu-grid {
+        gap: 2.5rem; /* lg:gap-10 */
+    }
+}
+
+.menu-card {
+    background-color: #ffffff;
+    border-radius: 1rem; /* More rounded corners */
+    box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.08); /* Deeper shadow */
+    overflow: hidden;
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+}
+
+.menu-card:hover {
+    transform: translateY(-8px) scale(1.01); /* Lift and slightly scale card on hover */
+    box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.2), 0 8px 12px -4px rgba(0, 0, 0, 0.1); /* Stronger, more diffused shadow */
+    background-color: #fcfcfc; /* Slight background change on hover */
+}
+
+.card-image {
+    width: 100%;
+    height: 13rem; /* Slightly taller images */
+    object-fit: cover;
+    border-top-left-radius: 1rem; /* Match card border-radius */
+    border-top-right-radius: 1rem; /* Match card border-radius */
+    display: block; /* Remove extra space below image */
+    transition: transform 0.3s ease-in-out; /* Smooth image scale on hover */
+}
+
+.menu-card:hover .card-image {
+    transform: scale(1.03); /* Slightly zoom image on card hover */
+}
+
+.card-content {
+    padding: 1.5rem; /* p-6 */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .card-content {
+        padding: 1.75rem; /* sm:p-7 */
+    }
+}
+
+.card-title {
+    font-size: 1.75rem; /* Larger title */
+    font-weight: 800; /* Bolder title */
+    color: #1a202c; /* Darker text */
+    margin-bottom: 0.75rem; /* More space below title */
+    letter-spacing: -0.01em;
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .card-title {
+        font-size: 2rem; /* sm:text-3xl */
+    }
+}
+
+.card-description {
+    color: #555; /* Slightly darker gray for better contrast */
+    line-height: 1.7; /* Increased line height for readability */
+    margin-bottom: 1.25rem; /* More space below description */
+    font-size: 1.05rem; /* Slightly larger base font size */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .card-description {
+        font-size: 1.15rem; /* sm:text-lg */
+    }
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.25rem; /* More space above footer */
+}
+
+.item-price {
+    font-size: 1.5rem; /* Larger price */
+    font-weight: 900; /* Extra bold price */
+    color: #28a745; /* Vibrant green */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow on price */
+}
+
+@media (min-width: 640px) { /* sm breakpoint */
+    .item-price {
+        font-size: 1.75rem; /* sm:text-2xl */
+    }
+}
+
+.add-to-cart-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient */
+    color: #fff;
+    font-weight: 700; /* Bolder font */
+    padding: 0.75rem 1.5rem; /* More padding */
+    border-radius: 0.75rem; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Blue shadow */
+    transition: background 0.3s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 0.08em; /* More letter spacing */
+    font-size: 0.95rem; /* Slightly smaller font for button text */
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #003d7a); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Lift more on hover */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Stronger shadow on hover */
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0); /* Reset on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow on click */
+    background: linear-gradient(45deg, #003d7a, #002a52); /* Even darker on active */
+}

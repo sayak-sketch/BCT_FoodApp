@@ -1,0 +1,280 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8; /* Light background for the whole page */
+}
+
+/* Header Styles */
+.foodhub-header {
+    /* Gradient background from headerrrrr.jpg */
+    background: linear-gradient(to right, #FF7F50, #FFA07A); /* Coral to Light Salmon gradient */
+    color: #333333; /* Dark text for contrast */
+    padding-bottom: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+.offer-banner {
+    background-color:orangered;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.offer-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333333; /* Dark text for logo */
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    color: #FF4500; /* OrangeRed for the icon (similar to image) */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #333333; /* Dark text for nav links */
+    font-weight: 600;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    color: #FF4500; /* OrangeRed on hover */
+}
+
+.header-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.header-icons a {
+    color: #333333; /* Dark text for icons */
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+    color: #FF4500; /* OrangeRed on hover */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #FF4500; /* OrangeRed for cart count background */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 0 40px;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 4.5vw; /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #333333; /* Dark text for heading */
+}
+
+.hero-content p {
+    font-size: 1.2vw; /* Responsive font size */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555555; /* Slightly lighter dark gray for paragraph */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Match image's button shadow */
+}
+
+.primary-btn {
+    background-color: #FF4500; /* OrangeRed primary button */
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background-color: #FF6347; /* Tomato (slightly softer red-orange) on hover */
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid #FF4500; /* OrangeRed border for secondary */
+    color: #FF4500; /* OrangeRed text for secondary */
+}
+
+.secondary-btn:hover {
+    background-color: #FF4500; /* OrangeRed background on hover */
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
+
+.pizza-illustration {
+    width: 100%;
+    max-width: 350px; /* Max size for the SVG illustration */
+    height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .header-top, .hero-section {
+        padding: 20px 20px;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 5vw;
+    }
+
+    .hero-content p {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .main-nav {
+        width: 100%;
+        order: 3; /* Move nav below logo and icons */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .header-icons {
+        order: 2; /* Keep icons next to logo initially */
+        margin-left: auto; /* Push icons to the right */
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 8vw; /* Larger on mobile */
+    }
+
+    .hero-content p {
+        font-size: 3.5vw; /* Larger on mobile */
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .pizza-illustration {
+        max-width: 250px; /* Smaller illustration on mobile */
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-top {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .header-icons a {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}

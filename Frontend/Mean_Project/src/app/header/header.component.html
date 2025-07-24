@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodHub Header</title>
+    <link rel="stylesheet" href="header.component.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="foodhub-header">
+  <!-- Marquee Offer Banner -->
+  <div class="offer-banner">
+    <div class="offer-text">🎉 Special BCT Training Offer: Get 50% off on your first order! 🎉</div>
+  </div>
+        <div class="header-top">
+            <div class="logo">
+                <i class="fas fa-utensils"></i> FoodHub
+            </div>
+            <nav class="main-nav">
+               <ul>
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/item" routerLinkActive="active">Items</a></li>
+        <li><a routerLink="/Offer" routerLinkActive="active">Offers</a></li>
+        <li><a routerLink="/howitworks" routerLinkActive="active">How it works</a></li>
+        <li><a routerLink="/contactus" routerLinkActive="active">Contact Us</a></li>
+      </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" aria-label="Cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a routerLink="/login" aria-label="User Account">
+  <i class="fas fa-user"></i>
+</a>
+            </div>
+        </div>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Delicious Food Delivered To Your Doorstep</h1>
+                <p>Order your favorite meals from the best restaurants in town.</p>
+                <div class="hero-buttons">
+                    <button class="btn primary-btn">Order Now</button>
+                    <button class="btn secondary-btn">View Menu</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="noodles-illustration">
+                    <img src="https://www.pngall.com/wp-content/uploads/5/Noodles-PNG-Image.png" alt="Noodles">
+                </div>
+            </div>
+        </div>
+    </header>
+
+</body>
+</html>
+<router-outlet></router-outlet>
